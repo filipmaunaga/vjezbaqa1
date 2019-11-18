@@ -10,29 +10,29 @@ namespace vjezbaqa1
     {
         static void Main(string[] args)
         {
-            
-            string [] niz = new string[3] {"jedan","dv", "o" };
-            int d = Duzina(niz);
-            Console.WriteLine("Najduzi string ima {0} karaktera", d);
+            //Napisati funkciju koja će kao ulazne parametre ima dva stringa. 
+            //  Funkcija treba da vrati broj razlika između dva stringa.Napomena.Oba stringa su iste dužine.
+
+            int[] niz = new int[3] { 3, 7, 3 };
+            int d = Avg(niz);
+            Console.WriteLine("Aritmeticka sredina je {0} ", d);
             Console.ReadKey();
-          
+
 
         }
-        static int Duzina(string [] niz)
+        static int Avg(int[] niz)
         {
-            int d = 0;
-            int k = 0;
-            for(int i = 0; i < niz.Length; i++)
+            int sum = 0;
+            int a = 0;
+            for (int i = 0; i < niz.Length; i++)
             {
-                k = niz[i].Length;
-                if (d < k)
-                {
-                    d = k;
-                }
-                
+                sum = sum + niz[i];
+                a = sum / niz.Length;
             }
-            return d;
-            
+            return a;
+
+
         }
     }
 }
+
