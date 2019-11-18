@@ -11,30 +11,27 @@ namespace vjezbaqa1
         static void Main(string[] args)
         {
             
-            int[] niz = new int[8] { -2,-4,1, 2, 3,6,7,8 };
-            int dif=Razlika(niz);
-            Console.WriteLine("Razlika izmedju najveceg i najmanjeg clana niza je {0}", dif);
+            string [] niz = new string[3] {"jedan","dv", "o" };
+            int d = Duzina(niz);
+            Console.WriteLine("Najduzi string ima {0} karaktera", d);
             Console.ReadKey();
-           // Napisati funkciju koja će kao ulazni parametar
-             //   imati niz brojeva. Vratiti razliku između najvećeg i najmanjeg broja.
+          
 
         }
-        static int Razlika(int [] niz)
+        static int Duzina(string [] niz)
         {
-            int max=niz[0];
-            int min = niz[0];
-            int dif = 0;
-            for (int i = 0; i < niz.Length; i++)
+            int d = 0;
+            int k = 0;
+            for(int i = 0; i < niz.Length; i++)
             {
-                if (max < niz[i])
+                k = niz[i].Length;
+                if (d < k)
                 {
-                    max = niz[i];
+                    d = k;
                 }
-                else
-                    max = min;
-                dif = max - min;
+                
             }
-            return dif;
+            return d;
             
         }
     }
