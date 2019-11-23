@@ -10,29 +10,46 @@ namespace vjezbaqa1
     {
         static void Main(string[] args)
         {
-            //Napisati funkciju koja će kao ulazne parametre ima dva stringa. 
-            //  Funkcija treba da vrati broj razlika između dva stringa.Napomena.Oba stringa su iste dužine.
 
-            int[] niz = new int[3] { 3, 7, 3 };
-            int d = Avg(niz);
-            Console.WriteLine("Aritmeticka sredina je {0} ", d);
+            SumOfUserEntries();
             Console.ReadKey();
 
-
         }
-        static int Avg(int[] niz)
+      
+static void SumOfUserEntries()
         {
-            int sum = 0;
-            int a = 0;
-            for (int i = 0; i < niz.Length; i++)
+            List<int> numbers = new List<int>();
+            bool stayinloop = true;
+            string userentry;
+            int entry;
+            do
             {
-                sum = sum + niz[i];
-                a = sum / niz.Length;
+                Console.WriteLine("Enter an int value to add to the List, for break do not enter anything");
+                userentry = Console.ReadLine();
+                if (string.IsNullOrEmpty(userentry))
+                {
+                    stayinloop = false;
+                    break;
+                }
+                entry = Convert.ToInt32(userentry);
+                numbers.Add(entry);
+            } while (stayinloop);
+            Console.WriteLine("Sum of every entered int on the List is: {0}", SumOfList(numbers));
+
+        }        
+            
+        static int SumOfList(List<int> anylist)
+        {
+            
+            int sum = 0;
+            foreach(int i in anylist)
+            {
+                sum = sum + i;
             }
-            return a;
-
-
+            return sum;
         }
+        
     }
 }
+
 
