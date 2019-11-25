@@ -12,8 +12,21 @@ namespace vjezbaqa1
         {
 
             SumOfUserEntries();
+            //UsingClass();
             Console.ReadKey();
 
+        }
+
+        static void UsingClass()
+        {
+            List<int> numbers = new List<int>();
+            numbers.Add(2);
+            numbers.Add(10);
+            numbers.Add(0);
+            foreach(int num in numbers)
+            {
+                FileClass.Log("Entered number is: " + Convert.ToString(num));
+            }
         }
       
 static void SumOfUserEntries()
@@ -34,7 +47,7 @@ static void SumOfUserEntries()
                 entry = Convert.ToInt32(userentry);
                 numbers.Add(entry);
             } while (stayinloop);
-            Console.WriteLine("Sum of every entered int on the List is: {0}", SumOfList(numbers));
+            Console.WriteLine("Sum of every entered int on the List is: {0}", SumCalc.CalculateSum(numbers));
 
         }        
             
